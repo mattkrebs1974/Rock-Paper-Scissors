@@ -18,7 +18,7 @@ body, html {
 #text2{
 height: fit-content;
 text-align: center;
-margin: 20px 0% 0px 0%;
+margin: 20px 0% 20px 0%;
 width:100%;
 left:auto;
 right:auto;
@@ -40,7 +40,7 @@ padding: 50px;
 color:#800000;
 font-size: 7vw;
 text-align: center;
-background-color: aliceblue;
+background-color: white;
 
 padding:20px;
 padding-bottom: 0px;
@@ -93,18 +93,18 @@ font-size-adjust: initial;
 }
 
 #text2:hover{
-box-shadow: 0px 0px 20px 5px aliceblue;
+box-shadow: 0px 0px 20px 5px white;
 }
 
 #topic {
 
-  background-color: aliceblue;
+  background-color: white;
   opacity:.8;
 }
 
   #username {
 
-background-color: aliceblue;
+background-color: white;
   opacity:.8;
   text-align:center;
   font-size:30%;
@@ -113,7 +113,7 @@ background-color: aliceblue;
   }
   #password {
 
-background-color: aliceblue;
+background-color: white;
   opacity:.8;
   text-align: center;
   font-size:30%;
@@ -127,7 +127,7 @@ background-color: aliceblue;
 .buttons {
 
 
-color:aliceblue;
+color:white;
 background-color: #800000;
 opacity:.8;
 padding:15px;
@@ -146,9 +146,9 @@ border:0px;
 
 
 .buttons:hover{
-box-shadow: 0px 0px 20px 5px aliceblue;
+box-shadow: 0px 0px 20px 5px white;
 color:#800000;
-background-color:aliceblue;
+background-color:white;
 
 
 
@@ -163,7 +163,7 @@ font-size: 30%;
 
   margin: -3% 0 0 0;
 
-  background-color: aliceblue;
+  background-color: white;
   opacity:.8;
   color:#800000;
   
@@ -176,10 +176,10 @@ font-size: 30%;
 #register:hover {
 
 box-shadow: 0px 0px 20px 5px #800000;
-color:aliceblue;
+color:white;
 background-color: #800000;
 border: 0px;
-opacity:80%;
+opacity:80%;d
 
 }
 
@@ -277,7 +277,12 @@ line-height: 40vw;
 line-height:40vw;
 
 
+
 }
 
+img {
 
+width: 80%;
+
+}
 
