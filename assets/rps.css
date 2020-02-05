@@ -16,12 +16,13 @@ body, html {
 }
 
 #text2{
-height:100vh;
+height: fit-content;
 text-align: center;
-margin: 20px -8% 20px -10%;
-width:118%;
+margin: 20px 0% 0px 0%;
+width:100%;
 left:auto;
 right:auto;
+padding: 50px;
 
 
 }
@@ -36,7 +37,7 @@ right:auto;
 .text {
 
    
-color:#007bff;
+color:#800000;
 font-size: 7vw;
 text-align: center;
 background-color: aliceblue;
@@ -78,7 +79,7 @@ ul.directions {
 
 #directions3{
 
-margin:-10% 0 0 0;
+margin:-13% 0 0 0;
 }
 
 .directions{
@@ -105,12 +106,17 @@ box-shadow: 0px 0px 20px 5px aliceblue;
 
 background-color: aliceblue;
   opacity:.8;
+  text-align:center;
+  font-size:30%;
+
 
   }
   #password {
 
 background-color: aliceblue;
   opacity:.8;
+  text-align: center;
+  font-size:30%;
 
   }
 
@@ -122,7 +128,7 @@ background-color: aliceblue;
 
 
 color:aliceblue;
-background-color: #007bff;
+background-color: #800000;
 opacity:.8;
 padding:15px;
 font-variant: small-caps;
@@ -132,16 +138,16 @@ border:0px;
 
 }
 
-.form-control::-webkit-input-placeholder { color:#007bff; font-variant: small-caps;}  /* WebKit, Blink, Edge */
-.form-control:-moz-placeholder { color: #007bff;font-variant: small-caps; }  /* Mozilla Firefox 4 to 18 */
-.form-control::-moz-placeholder { color:#007bff;font-variant: small-caps; }  /* Mozilla Firefox 19+ */
-.form-control:-ms-input-placeholder { color:#007bff;font-variant: small-caps; }  /* Internet Explorer 10-11 */
-.form-control::-ms-input-placeholder { color:#007bff;font-variant: small-caps; }  /* Microsoft Edge */
+.form-control::-webkit-input-placeholder { color:#800000; font-variant: small-caps;}  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #800000;font-variant: small-caps; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color:#800000;font-variant: small-caps; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color:#800000;font-variant: small-caps; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color:#800000;font-variant: small-caps; }  /* Microsoft Edge */
 
 
 .buttons:hover{
 box-shadow: 0px 0px 20px 5px aliceblue;
-color:#007bff;
+color:#800000;
 background-color:aliceblue;
 
 
@@ -153,13 +159,13 @@ opacity:80%;
 
 #register {
 
- 
+font-size: 30%;
 
   margin: -3% 0 0 0;
 
   background-color: aliceblue;
   opacity:.8;
-  color:#007bff;
+  color:#800000;
   
   font-variant: small-caps;
   border:0px;
@@ -169,9 +175,9 @@ opacity:80%;
 
 #register:hover {
 
-box-shadow: 0px 0px 20px 5px #007bff;
+box-shadow: 0px 0px 20px 5px #800000;
 color:aliceblue;
-background-color: #007bff;
+background-color: #800000;
 border: 0px;
 opacity:80%;
 
@@ -232,3 +238,46 @@ text-shadow: 4px 4px 6px black;
 margin: 0 10% 0 10%;
 
 }
+
+.table {
+
+
+padding-bottom:-10px;
+
+
+text-align: center;
+font-size: 30%;
+font-size-adjust: initial;
+  width:98%;
+ 
+
+}
+
+.left {
+
+  width:50vw;
+}
+
+
+.right {
+  width:50vw;
+
+
+}
+
+#imageToolOne{
+line-height: 40vw;
+
+
+}
+
+
+#imageToolTwo
+{
+line-height:40vw;
+
+
+}
+
+
+
