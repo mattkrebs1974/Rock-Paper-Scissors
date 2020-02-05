@@ -1,0 +1,234 @@
+body, html {
+  width: 100%;
+}
+
+.bg {
+
+  width: 100vw;
+ 
+  
+
+ 
+  background-position:center;
+  background-color:#323232;
+ 
+
+}
+
+#text2{
+height:100vh;
+text-align: center;
+margin: 20px -8% 20px -10%;
+width:118%;
+left:auto;
+right:auto;
+
+
+}
+#directions3 {
+
+  margin:  20px;
+
+
+}
+
+
+.text {
+
+   
+color:#007bff;
+font-size: 7vw;
+text-align: center;
+background-color: aliceblue;
+
+padding:20px;
+padding-bottom: 0px;
+
+opacity:.8;
+font-variant: small-caps;
+border-radius: 10px;
+
+
+}
+#directions2 {
+padding:0;
+
+text-align: center;
+min-height:10px;
+
+
+
+}
+
+
+
+
+
+
+ul {
+
+  padding-inline-start: 0px;
+}
+ul.directions {
+
+  white-space: nowrap;
+  text-align: center;
+
+}
+
+#directions3{
+
+margin:-10% 0 0 0;
+}
+
+.directions{
+
+padding-bottom:-10px;
+
+
+text-align: center;
+font-size: 30%;
+font-size-adjust: initial;
+}
+
+#text2:hover{
+box-shadow: 0px 0px 20px 5px aliceblue;
+}
+
+#topic {
+
+  background-color: aliceblue;
+  opacity:.8;
+}
+
+  #username {
+
+background-color: aliceblue;
+  opacity:.8;
+
+  }
+  #password {
+
+background-color: aliceblue;
+  opacity:.8;
+
+  }
+
+
+
+
+
+.buttons {
+
+
+color:aliceblue;
+background-color: #007bff;
+opacity:.8;
+padding:15px;
+font-variant: small-caps;
+border:0px;
+
+
+
+}
+
+.form-control::-webkit-input-placeholder { color:#007bff; font-variant: small-caps;}  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #007bff;font-variant: small-caps; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color:#007bff;font-variant: small-caps; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color:#007bff;font-variant: small-caps; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color:#007bff;font-variant: small-caps; }  /* Microsoft Edge */
+
+
+.buttons:hover{
+box-shadow: 0px 0px 20px 5px aliceblue;
+color:#007bff;
+background-color:aliceblue;
+
+
+
+border: 0px;
+opacity:80%;
+
+}
+
+#register {
+
+ 
+
+  margin: -3% 0 0 0;
+
+  background-color: aliceblue;
+  opacity:.8;
+  color:#007bff;
+  
+  font-variant: small-caps;
+  border:0px;
+ 
+
+}
+
+#register:hover {
+
+box-shadow: 0px 0px 20px 5px #007bff;
+color:aliceblue;
+background-color: #007bff;
+border: 0px;
+opacity:80%;
+
+}
+
+
+#formOne {
+
+  
+float: right;
+
+
+
+
+}
+
+#formTwo {
+
+  
+float:left;
+
+
+}
+@media only screen and (max-width: 766px) {
+  #formOne {
+    float:none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #formTwo {
+    float:none;
+  }
+}
+
+
+.changeImage{
+
+width:100vw;
+
+}
+
+
+#title {
+
+text-shadow: 2px 2px 4px black;
+line-height: initial;
+}
+
+
+ #title:hover {
+
+text-shadow: 4px 4px 6px black;
+}
+
+#inputRow{
+
+margin: 0 10% 0 10%;
+
+}
