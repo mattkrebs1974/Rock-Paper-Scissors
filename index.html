@@ -40,7 +40,7 @@
             </div>
         </div>
 <br>
-
+<p id="number"></p>
 
             <div id="directions3" class="form-group row">
                 <div class="col-12">
@@ -51,7 +51,7 @@
                         <div>
                             <li >Sign-In.</li>
                             <li >Wait for a Competitor.</li>
-                            <li >Select tool: "R", "P", "S."</li>
+                            <li >Select a tool.</li>
             
                         </div>
             
@@ -106,14 +106,14 @@
             </div>
         </div>
 
-<table class="table table-hover d-flex justify-content-center">
+<table id="info" class="table table-hover d-flex justify-content-center">
     <tbody>
 
       
         <tr>
             
-            <td class="left" id="nameone">Name:</td>
-            <td class="right" id="nametwo">Name:</td>
+            <td class="left" id="nameone">Username:</td>
+            <td class="right" id="nametwo">Username:</td>
         </tr>
         <tr>
            
@@ -133,30 +133,63 @@
             >Tool: Unselected</td>
         </tr>
         <tr>
+        
+            <td class="left" id="winOrLoseOne">Current Outcome: Undetermined</td>
+            <td class="right" id="winOrLoseOne">Current Outcome: Undetermined</td>
+        </tr>
+       <td class="left lastRow"></td>
+        <td class="right lastRow"></td>
+
+        </tbody>
+    </table>
+
+<section> 
+<div id="tools" class="row">
+    <div class="col-4">
+   <button id=rock class="btn btn-md">Rock</button> 
+    </div>
+    <div class="col-4">
+    <button id=paper class="btn btn-md">Paper</button>
+    </div>
+    <div class="col-4">
+    <button id=rock class="btn btn-md">Scissors</button>
+    </div>
+</div>
+</section>
+<table class="table table-hover d-flex justify-content-center">
+    <tbody>
+        <tr id ="tableBody">
            
             <td class="left" id="imageToolOne">
-                <img id="paperOne" src="Paper.png" alt="paper">
-                <img id="RockOne" src="Rock.png" alt="Rock">
-
-                <img id="ScissorsOne" src="Scissors.png" alt="Scissors">
-
-                
+                <img id="outcomeOne">
 
             </td>
             <td class="right"
-            id="imageToolTwo"><img id="paperTwo" src="Paper.png" alt="paper">
-            <img id="RockTwo" src="Rock.png" alt="Rock">
-            
-            <img id="ScissorsTwo" src="Scissors.png" alt="Scissors"></td>
+            id="imageToolTwo"><img id="outcomeTwo" src="Paper.png" alt="paper">
+            </td>
         </tr>
-        <tr>
-        
-            <td class="left" id="winOrLoseOne">Outcome: Undetermined</td>
-            <td class="right"
-            id="winOrLoseOne">Outcome: Undetermined</td>
-        </tr>
+       
     </tbody>
 </table>
+
+    
+        <p id="historicalData" class="justify-content-center" scope="col">Historical Data
+        </p>
+        <p id="minimum">Minimum: 10 wins</p>
+    <table class="table">
+    <thead class="col-12 thead-dark">
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Wins</th>
+            <th scope="col">Win%</th>
+        </tr>
+    </thead>
+    <tbody class="justify-content-center">
+        <tr>
+            <td id="usernameHistorical"></td>
+            <td id="winsHistorical"></td>
+            <td id="winPercentHistorical"></td>
+        </tr>
 
 
  
