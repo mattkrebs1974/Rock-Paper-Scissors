@@ -1,9 +1,11 @@
 $(document).ready(function () {
     var pos=2;
 
+   
+
 function setInMotion(){
     
-    setInterval(frame, 100);
+ var startedMotion=setInterval(frame, 100);
     //1000 means seconds. 
 
     function frame() {
@@ -26,13 +28,17 @@ function setInMotion(){
             $("#outcomeTwo").attr("src", "./Rock.png");
             pos--;
 
-        } else {}
+        } else {};
 
     }
 
     frame();  
 
     }
-    setInMotion();
+    
+   setInMotion();
+//stop --- pos=5;
+//start --- pos=2;
+
 
     });
