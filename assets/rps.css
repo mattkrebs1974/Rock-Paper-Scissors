@@ -451,3 +451,48 @@ padding:0px;
   font-size: 25%;
   margin:0 0 1% 0px;
 }
+
+#chat-send {
+
+font-size: 35%;
+
+  margin: -3% 0 0 0;
+
+  background-color: white;
+  opacity:.8;
+  color:#800000;
+  
+  font-variant: small-caps;
+  border: 1px solid #800000
+ 
+
+}
+
+#chat-send:hover {
+
+box-shadow: 0px 0px 20px 5px #800000;
+color:white;
+background-color: #800000;
+border: 0px;
+opacity:80%;
+border: 1px solid #800000
+ 
+
+}
+
+#player-chat {
+background-color: black;
+color: white;
+height: 100px;
+line-height: 10px;
+font-size: 20px;
+width:90%;
+}
+
+#chat-box {
+background-color: white;
+color: black;
+height: 100px;
+line-height: 10px;
+font-size: 20px;
+}
