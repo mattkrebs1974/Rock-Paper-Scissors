@@ -203,6 +203,8 @@ firebase.initializeApp(firebaseConfig);
                     choice: ""
                 };
                 $("#nametwo").text(player2.name);
+                pos=2;
+                posi=2;
 
                 // $("#player-2-greeting").css("display", "block");
                 // $("#player-2-buttons").css("display", "block");
