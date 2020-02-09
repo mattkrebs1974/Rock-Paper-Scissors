@@ -84,6 +84,8 @@ $(document).ready(function () {
 
             $("#nameone").text("Player 1");
             database.ref("/outcome/").remove();
+            database.ref("/turn/").remove();
+            $("#chat-box").empty();
         }
 
         if (snapshot.child("player2").exists()) {
@@ -105,6 +107,8 @@ $(document).ready(function () {
 
             $("#nametwo").text("Player 2");
             database.ref("/outcome/").remove();
+            database.ref("/turn/").remove();
+            $("#chat-box").empty();
         }
 
         if (!player1 && !player2) {
