@@ -48,7 +48,7 @@ function setInMotion(){
         function frame2() {
             if (posi == 0) {
                
-                $("#outcomeTwo").attr("src", "./Paper.png");
+              
                 posi = 3;
                 posi--;
 
@@ -179,6 +179,7 @@ firebase.initializeApp(firebaseConfig);
                 };
                 $("#nameone").text(player1.name);
                 pos=2;
+                console.log("posi" + posi);
                
                 // $("#player-1-greeting").css("display", "block");
                 // $("#player-1-buttons").css("display", "block");
@@ -205,6 +206,7 @@ firebase.initializeApp(firebaseConfig);
                 $("#nametwo").text(player2.name);
                 pos=2;
                 posi=2;
+                console.log("posi"+posi);
 
                 // $("#player-2-greeting").css("display", "block");
                 // $("#player-2-buttons").css("display", "block");
@@ -335,18 +337,38 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/outcome/").set("Tie game!");
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
+
+                pos=5;
+                posi=5;
+                $("#outcomeOne").attr("src", "./Rock.png");
+                $("#outcomeTwo").attr("src", "./Rock.png");
+                
+
             } else if (player2.choice === "paper") {
                 console.log("paper wins");
 
                 database.ref().child("/outcome/").set(player2.name + " wins! <br> Paper beats Rock!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
+
+                pos = 5;
+                posi = 5;
+                $("#outcomeOne").attr("src", "./Rock.png");
+                $("#outcomeTwo").attr("src", "./Paper.png");
+
+
             } else {
                 console.log("rock wins");
 
                 database.ref().child("/outcome/").set(player1.name + " wins! <br> Rock beats Scissors!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
+
+                pos = 5;
+                posi = 5;
+                $("#outcomeOne").attr("src", "./Rock.png");
+                $("#outcomeTwo").attr("src", "./Scissors.png");
+
             }
 
         } else if (player1.choice === "paper") {
@@ -356,18 +378,40 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/outcome/").set(player1.name + " wins! <br> Paper beats Rock!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
+
+                pos = 5;
+                posi = 5;
+                $("#outcomeOne").attr("src", "./Paper.png");
+                $("#outcomeTwo").attr("src", "./Rock.png");
+
+
             } else if (player2.choice === "paper") {
                 console.log("tie");
 
                 database.ref().child("/outcome/").set("Tie game!");
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
+
+                pos = 5;
+                posi = 5;
+                $("#outcomeOne").attr("src", "./Paper.png");
+                $("#outcomeTwo").attr("src", "./Paper.png");
+
+
+
             } else {
                 console.log("scissors win");
 
                 database.ref().child("/outcome/").set(player2.name + " wins! <br> Scissors beats Paper!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
+
+                pos = 5;
+                posi = 5;
+                $("#outcomeOne").attr("src", "./Paper.png");
+                $("#outcomeTwo").attr("src", "./Scissors.png");
+
+
             }
 
         } else if (player1.choice === "scissors") {
@@ -377,18 +421,38 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/outcome/").set(player2.name + " wins! <br> Rock beats Scissors!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
+
+                pos = 5;
+                posi = 5;
+                $("#outcomeOne").attr("src", "./Scissors.png");
+                $("#outcomeTwo").attr("src", "./Rock.png");
+
+
+
             } else if (player2.choice === "paper") {
                 console.log("scissors win");
 
                 database.ref().child("/outcome/").set(player1.name + " wins! <br> Scissors beats Paper!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
+                pos = 5;
+                posi = 5;
+                $("#outcomeOne").attr("src", "./Scissors.png");
+                $("#outcomeTwo").attr("src", "./Paper.png");
+
+
             } else {
                 console.log("tie");
 
                 database.ref().child("/outcome/").set("Tie game!");
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
+
+
+                pos = 5;
+                posi = 5;
+                $("#outcomeOne").attr("src", "./Scissors.png");
+                $("#outcomeTwo").attr("src", "./Scissors.png");
             }
         }
 
