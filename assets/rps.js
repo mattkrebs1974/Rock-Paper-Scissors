@@ -1,104 +1,60 @@
 $(document).ready(function () {
-    var pos=2;
-    var posi=2;
-
+    var pos = 2;
    
 
-function setInMotion(){
-    
- var startedMotion=setInterval(frame, 100);
-    //1000 means seconds. 
-
-    function frame() {
-        if (pos == 0) {
-            $("#outcomeOne").attr("src", "./Rock.png");
-            // $("#outcomeTwo").attr("src", "./Paper.png");
-            pos = 3;
-            pos--;
-           
-        }
-        else if (pos == 1) {
-            
-            $("#outcomeOne").attr("src", "./Paper.png");
-            // $("#outcomeTwo").attr("src", "./Scissors.png");
-            pos--; }
-             
-        else if (pos == 2) {
-
-            $("#outcomeOne").attr("src", "./Scissors.png");
-            // $("#outcomeTwo").attr("src", "./Rock.png");
-            pos--;
-
-        } else {};
-
-    }
-
-    frame();  
-
-    }
-    
-   setInMotion();
 
 
-    function setInMotion2() {
+    function setInMotion() {
 
-        var startedMotion2 = setInterval(frame2, 100);
+        var startedMotion = setInterval(frame, 100);
         //1000 means seconds. 
 
-        function frame2() {
-            if (posi == 0) {
-               
-              
-                posi = 3;
-                posi--;
+        function frame() {
+            if (pos == 0) {
+                $("#outcomeOne").attr("src", "./Rock.png");
+                $("#outcomeTwo").attr("src", "./Paper.png");
+                pos = 3;
+                pos--;
 
             }
-            else if (posi == 1) {
+            else if (pos == 1) {
 
-              
+                $("#outcomeOne").attr("src", "./Paper.png");
                 $("#outcomeTwo").attr("src", "./Scissors.png");
-                posi--;
+                pos--;
             }
 
-            else if (posi == 2) {
+            else if (pos == 2) {
 
-              
+                $("#outcomeOne").attr("src", "./Scissors.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
-                posi--;
+                pos--;
 
             } else { };
 
         }
 
-        frame2();
+        frame();
 
     }
 
-    setInMotion2();
+    setInMotion();
 
 
 
-//stop --- pos=5;
-//start --- pos=2;
 
-pos=5;
-posi=5;
-
-
-   
-
-var firebaseConfig = {
-    apiKey: "AIzaSyAZBPmZcitrg8Dw8DMUkwuqB1JRcbJj-6I",
-    authDomain: "rockpaperscissors-b19ba.firebaseapp.com",
-    databaseURL: "https://rockpaperscissors-b19ba.firebaseio.com",
-    projectId: "rockpaperscissors-b19ba",
-    storageBucket: "rockpaperscissors-b19ba.appspot.com",
-    messagingSenderId: "328081556370",
-    appId: "1:328081556370:web:9b37d15c7e23d0442bb74b",
-    measurementId: "G-0TSHR755EF"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+    var firebaseConfig = {
+        apiKey: "AIzaSyAZBPmZcitrg8Dw8DMUkwuqB1JRcbJj-6I",
+        authDomain: "rockpaperscissors-b19ba.firebaseapp.com",
+        databaseURL: "https://rockpaperscissors-b19ba.firebaseio.com",
+        projectId: "rockpaperscissors-b19ba",
+        storageBucket: "rockpaperscissors-b19ba.appspot.com",
+        messagingSenderId: "328081556370",
+        appId: "1:328081556370:web:9b37d15c7e23d0442bb74b",
+        measurementId: "G-0TSHR755EF"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
     var database = firebase.database();
 
@@ -109,7 +65,7 @@ firebase.initializeApp(firebaseConfig);
     var player2Choice = "";
     var turn = 1;
 
-    database.ref("/players/").on("value",function(snapshot) {
+    database.ref("/players/").on("value", function (snapshot) {
         if (snapshot.child("player1").exists()) {
             console.log("Player 1 exists");
 
@@ -139,7 +95,7 @@ firebase.initializeApp(firebaseConfig);
             $("#nametwo").text(player2Name);
 
             $("#totalWinsTwo").html("Session Wins: " + player2.win);
-        
+
         } else {
             console.log("Player 2 does NOT exist");
 
@@ -178,13 +134,13 @@ firebase.initializeApp(firebaseConfig);
                     choice: ""
                 };
                 $("#nameone").text(player1.name);
-                pos=2;
-                console.log("posi" + posi);
-               
+                pos = 2;
+              
+
                 // $("#player-1-greeting").css("display", "block");
                 // $("#player-1-buttons").css("display", "block");
                 // $("#enter-name").css("display", "none");
-               
+
                 console.log(player1);
                 console.log(yourPlayerName);
                 database.ref().child("/players/player1").set(player1);
@@ -204,9 +160,9 @@ firebase.initializeApp(firebaseConfig);
                     choice: ""
                 };
                 $("#nametwo").text(player2.name);
-                pos=2;
-                posi=2;
-                console.log("posi"+posi);
+                pos = 2;
+            
+              
 
                 // $("#player-2-greeting").css("display", "block");
                 // $("#player-2-buttons").css("display", "block");
@@ -244,7 +200,7 @@ firebase.initializeApp(firebaseConfig);
 
                 $("#isToolSelectedOne").html("Select Your Tool!");
 
-                
+
 
             }
             if (snapshot.child("/outcome/").exists()) {
@@ -338,11 +294,11 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
-                pos=5;
-                posi=5;
+                pos = 5;
+               
                 $("#outcomeOne").attr("src", "./Rock.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
-                
+
 
             } else if (player2.choice === "paper") {
                 console.log("paper wins");
@@ -352,7 +308,7 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
                 pos = 5;
-                posi = 5;
+            
                 $("#outcomeOne").attr("src", "./Rock.png");
                 $("#outcomeTwo").attr("src", "./Paper.png");
 
@@ -365,7 +321,7 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
                 pos = 5;
-                posi = 5;
+               
                 $("#outcomeOne").attr("src", "./Rock.png");
                 $("#outcomeTwo").attr("src", "./Scissors.png");
 
@@ -380,7 +336,7 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
                 pos = 5;
-                posi = 5;
+              
                 $("#outcomeOne").attr("src", "./Paper.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
 
@@ -393,7 +349,7 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
                 pos = 5;
-                posi = 5;
+             
                 $("#outcomeOne").attr("src", "./Paper.png");
                 $("#outcomeTwo").attr("src", "./Paper.png");
 
@@ -407,7 +363,7 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
                 pos = 5;
-                posi = 5;
+              
                 $("#outcomeOne").attr("src", "./Paper.png");
                 $("#outcomeTwo").attr("src", "./Scissors.png");
 
@@ -423,7 +379,7 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
                 pos = 5;
-                posi = 5;
+              
                 $("#outcomeOne").attr("src", "./Scissors.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
 
@@ -436,7 +392,7 @@ firebase.initializeApp(firebaseConfig);
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
                 pos = 5;
-                posi = 5;
+               
                 $("#outcomeOne").attr("src", "./Scissors.png");
                 $("#outcomeTwo").attr("src", "./Paper.png");
 
@@ -450,7 +406,7 @@ firebase.initializeApp(firebaseConfig);
 
 
                 pos = 5;
-                posi = 5;
+              
                 $("#outcomeOne").attr("src", "./Scissors.png");
                 $("#outcomeTwo").attr("src", "./Scissors.png");
             }
