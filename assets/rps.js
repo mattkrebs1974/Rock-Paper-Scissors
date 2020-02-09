@@ -75,6 +75,8 @@ $(document).ready(function () {
             $("#nameone").text(player1Name);
 
             $("#totalWinsOne").html("Session Wins: " + player1.win);
+            $("#lossesOne").html("Session Losses: " + player1.loss);
+
 
         } else {
             console.log("Player 1 does NOT exist");
@@ -97,6 +99,7 @@ $(document).ready(function () {
             $("#nametwo").text(player2Name);
 
             $("#totalWinsTwo").html("Session Wins: " + player2.win);
+            $("#lossesTwo").html("Session Losses:  "+ player2.loss);
 
         } else {
             console.log("Player 2 does NOT exist");
@@ -118,7 +121,9 @@ $(document).ready(function () {
 
             $("#chat-box").empty();
             $("#totalWinsOne").html("Session Wins: ");
+            $("#lossesOne").html("Session Losses: ");
             $("#totalWinsTwo").html("Session Wins: ");
+            $("#lossesTwo").html("Session Losses: ");
         }
     });
 
