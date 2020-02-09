@@ -16,11 +16,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Rouge+Script&display=swap" rel="stylesheet">
+
+        <!-- Firebase References -->
+        <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+
 
     <link href="./assets/rps.css" rel="stylesheet" type="text/css">
 
-    <script src="assets/rps.js"></script>
+   
 </head>
 
 <body class="bg">
@@ -63,14 +67,14 @@
             </div>
             </div>
 
-
+<form id="enter-name" onsubmit="event.preventDefault();">
         <div id= "inputRow">
         <div class="form-group row">
             <div class="col-12 col-sm-6">
                 <div>
                     <p>
                         <div id="formOne" class="row">
-                            <input class="form-control" id= "username" placeholder="Username" onfocus="this.value=''">
+                            <input class="form-control" id= "username"  placeholder="Username" onfocus="this.value=''">
                     
                         </div>
                     </p>
@@ -105,6 +109,7 @@
                 </div>
             </div>
         </div>
+    </form>
 
 <table id="info" class="table table-hover d-flex justify-content-center">
     <tbody>
@@ -112,19 +117,22 @@
       
         <tr>
             
-            <td class="left" id="nameone">Username:</td>
-            <td class="right" id="nametwo">Username:</td>
+            <td class="left" id="nameone">Player 1</td>
+            <td class="right" id="nametwo">Player 2</td>
         </tr>
+
+        <!-- <tr>
+                    <td class="left" id="historicalWinsOne"> Session Wins:</td>
+                    <td class="right"
+                    id="historicalWinsTwo">Session Wins:</td>
+                </tr> -->
         <tr>
            
-            <td class="left" id="totalWinsOne">Total Wins:</td>
-            <td class="right" id="totalWinsTwo">Total Wins:</td>
+            <td class="left" id="totalWinsOne">Session Wins:</td>
+            <td class="right" id="totalWinsTwo">Session Wins:</td>
         </tr>
-        <tr>
-            <td class="left" id="sessionlWinsOne"> Session Wins:</td>
-            <td class="right"
-            id="sessionlWinsTwo">Session Wins:</td>
-        </tr>
+       
+       
         <tr>
          
             <td class="left"
@@ -145,15 +153,28 @@
 
 <section> 
 <div id="tools" class="row">
-    <div class="col-4">
-   <button id=rock class="btn btn-md">Rock</button> 
+    <div class="col-2">
+   <button id=rock value="rock" class="btn btn-sm btnOne">Rock</button> 
     </div>
-    <div class="col-4">
-    <button id=paper class="btn btn-md">Paper</button>
+    <div class="col-2">
+    <button id=paper value="paper" class="btn btn-sm btnOne">Paper</button>
     </div>
-    <div class="col-4">
-    <button id=rock class="btn btn-md">Scissors</button>
+    <div class="col-2">
+    <button id=rock value="scissors" class="btn btn-sm btnOne">Scissors</button>
     </div>
+    <div class="col-2">
+        <button id=rock2 value="rock" class="btn btn-sm btnTwo">Rock</button>
+    </div>
+    <div class="col-2">
+        <button id=paper2 value="paper" class="btn btn-sm btnTwo">Paper</button>
+    </div>
+    <div class="col-2">
+        <button id=rock2 value="scissors" class="btn btn-sm btnTwo">Scissors</button>
+    </div>
+
+
+
+
 </div>
 </section>
 <table class="table table-hover d-flex justify-content-center">
@@ -221,6 +242,7 @@
 
 
 
+    <script src="assets/rps.js"></script>
           
 </body>
 

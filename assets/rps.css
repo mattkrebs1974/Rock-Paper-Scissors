@@ -430,6 +430,93 @@ border: 1px solid #800000
 
 }
 
+
+#rock2 {
+
+font-size: 35%;
+
+  margin: -3% 0 0 0;
+
+  background-color: white;
+  opacity:.8;
+  color:#800000;
+  
+  font-variant: small-caps;
+  border: 1px solid #800000
+ 
+
+}
+
+#rock2:hover {
+
+box-shadow: 0px 0px 20px 5px #800000;
+color:white;
+background-color: #800000;
+border: 0px;
+opacity:80%;
+border: 1px solid #800000
+ 
+
+}
+
+#paper2 {
+
+font-size: 35%;
+
+  margin: -3% 0 0 0;
+
+  background-color: white;
+  opacity:.8;
+  color:#800000;
+  
+  font-variant: small-caps;
+  border: 1px solid #800000
+ 
+
+}
+
+#paper2:hover {
+
+box-shadow: 0px 0px 20px 5px #800000;
+color:white;
+background-color: #800000;
+border: 0px;
+opacity:80%;
+border: 1px solid #800000
+ 
+
+}
+
+
+#scissors2 {
+
+font-size: 35%;
+
+  margin: -3% 0 0 0;
+
+  background-color: white;
+  opacity:.8;
+  color:#800000;
+  
+  font-variant: small-caps;
+  border: 1px solid #800000
+ 
+
+}
+
+#scissors2:hover {
+
+box-shadow: 0px 0px 20px 5px #800000;
+color:white;
+background-color: #800000;
+border: 0px;
+opacity:80%;
+border: 1px solid #800000
+}
+
+
+
+
 td.right.lastRow {
 
 padding:0px;
