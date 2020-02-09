@@ -136,7 +136,7 @@ firebase.initializeApp(firebaseConfig);
             player2 = snapshot.val().player2;
             player2Name = player2.name;
 
-            $("#nametwo").text(player1Name);
+            $("#nametwo").text(player2Name);
 
             $("#totalWinsTwo").html("Session Wins: " + player2.win);
         
