@@ -232,7 +232,7 @@ $(document).ready(function () {
     });
     database.ref("/chat/").on("child_added", function (snapshot) {
         var chatMsg = snapshot.val();
-        var chatEntry = $("<div>").html(chatMsg);
+        var chatEntry = $("<br><br><div>").html(chatMsg);
 
         $("#chat-box").append(chatEntry);
         $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
@@ -280,7 +280,7 @@ $(document).ready(function () {
     });
 
 
-    $("#tools").on("click", ".btnTwo", function (event) {
+    $("#tools").on("click", ".btnOne", function (event) {
         event.preventDefault();
 
         if (player1 && player2 && (yourPlayerName === player2.name) && (turn === 2)) {

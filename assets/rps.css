@@ -570,10 +570,10 @@ border: 1px solid #800000
 #player-chat {
 background-color: black;
 color: white;
-height: 100px;
+height: 40px;
 line-height: 10px;
 font-size: 20px;
-width:90%;
+
 }
 
 #chat-box {
