@@ -550,9 +550,8 @@ font-size: 35%;
   color:#800000;
   
   font-variant: small-caps;
-  border: 1px solid #800000
- 
-
+  border: 1px solid #800000;
+  
 }
 
 #chat-send:hover {
@@ -574,6 +573,7 @@ height: 40px;
 line-height: 10px;
 font-size: 20px;
 
+
 }
 
 #chat-box {
@@ -582,4 +582,12 @@ color: black;
 height: 100px;
 line-height: 10px;
 font-size: 20px;
+text-align:center;
+}
+
+#chatButton {
+
+margin-top:-4%;
+margin-bottom:5%;
+
 }

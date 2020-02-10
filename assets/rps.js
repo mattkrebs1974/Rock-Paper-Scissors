@@ -275,6 +275,9 @@ $(document).ready(function () {
             turn = 2;
             database.ref().child("/turn").set(2);
             $("#round-outcome").html("");
+            $("#isToolSelectedOne").html("Tool: Selected!");
+
+          
 
         }
     });
@@ -288,6 +291,7 @@ $(document).ready(function () {
 
             player2.choice = choice;
             database.ref().child("/players/player2/choice").set(choice);
+            $("#isToolSelectedOne").html("Tool: Selected!");
 
             rpsCompare();
 
