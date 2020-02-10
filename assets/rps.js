@@ -228,11 +228,11 @@ $(document).ready(function () {
                
 
                 $("#isToolSelectedOne").html("Select Your Tool!");
-               
+                $("#isToolSelectedTwo").html("Player 1's Turn.");
+              
+              
 
-
-
-
+    
             }
             if (snapshot.child("/outcome/").exists()) {
                 console.log("player 1 tool selected")
@@ -280,13 +280,15 @@ $(document).ready(function () {
 
         console.log("outcome has changed");
 
-        // $("#round-outcome").html(snapshot.val());
+        $("#round-outcome").html(snapshot.val());
 
     });
 
 
     $("#tools").on("click", ".btnOne", function (event) {
         event.preventDefault();
+
+
 
         if (player1 && player2 && (yourPlayerName === player1.name) && (turn === 1)) {
             var choice = $(this).val().trim();
@@ -298,6 +300,8 @@ $(document).ready(function () {
             database.ref().child("/turn").set(2);
             $("#round-outcome").html("");
             $("#isToolSelectedOne").html("Tool: Selected!");
+            $("#isToolSelectedTwo").html("Select Your Tool!");
+
 
             setTimeout(posfive, 200);
           
@@ -355,7 +359,7 @@ $(document).ready(function () {
             } else if (player2.choice === "paper") {
                 console.log("paper wins");
 
-                database.ref().child("/outcome/").set(player2.name + " wins! <br> Paper beats Rock!");
+                database.ref().child("/outcome/").set(player2.name + " wins! Paper beats Rock!");
                 $("#winOrLoseOne").html(player2.name + " wins!  Paper beats Rock!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
@@ -369,7 +373,7 @@ $(document).ready(function () {
             } else {
                 console.log("rock wins");
 
-                database.ref().child("/outcome/").set(player1.name + " wins! <br> Rock beats Scissors!");
+                database.ref().child("/outcome/").set(player1.name + " wins! Rock beats Scissors!");
                 $("#winOrLoseOne").html(player1.name + " wins!  Rock beats Scissors!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
@@ -385,8 +389,8 @@ $(document).ready(function () {
             if (player2.choice === "rock") {
                 console.log("paper wins");
 
-                database.ref().child("/outcome/").set(player1.name + " wins! <br> Paper beats Rock!");
-                $("#winOrLoseOne").html(player1.name + " wins! Paper beats Rock!");
+                database.ref().child("/outcome/").set(player1.name + " wins! Paper beats Rock!");
+                $("#winOrLoseOne").text(player1.name + " wins! Paper beats Rock!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
@@ -414,7 +418,7 @@ $(document).ready(function () {
             } else {
                 console.log("scissors win");
 
-                database.ref().child("/outcome/").set(player2.name + " wins! <br> Scissors beats Paper!");
+                database.ref().child("/outcome/").set(player2.name + " wins! Scissors beats Paper!");
                 $("#winOrLoseOne").html(player2.name + " wins! Scissors beats Paper!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
@@ -431,7 +435,7 @@ $(document).ready(function () {
             if (player2.choice === "rock") {
                 console.log("rock wins");
 
-                database.ref().child("/outcome/").set(player2.name + " wins! <br> Rock beats Scissors!");
+                database.ref().child("/outcome/").set(player2.name + " wins! Rock beats Scissors!");
                 $("#winOrLoseOne").html(player2.name + " wins! Rock beats Scissors!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
@@ -446,7 +450,7 @@ $(document).ready(function () {
             } else if (player2.choice === "paper") {
                 console.log("scissors win");
 
-                database.ref().child("/outcome/").set(player1.name + " wins! <br> Scissors beats Paper!");
+                database.ref().child("/outcome/").set(player1.name + " wins! Scissors beats Paper!");
                 $("#winOrLoseOne").html(player1.name + " wins! Scissors beats Paper!");
 
                 database.ref().child("/players/player1/win").set(player1.win + 1);
@@ -475,9 +479,10 @@ $(document).ready(function () {
 
         setTimeout(turn = 1,4000);
         database.ref().child("/turn").set(1);
-        // database.ref("/outcome/").on("value", function(snapshot) {
-        //     $("#round-outcome").html(snapshot.val());
-        // });
+
+        database.ref("/outcome/").on("value", function(snapshot) {
+            $("#winOrLoseOne").html(snapshot.val());
+        });
     }
 
 
