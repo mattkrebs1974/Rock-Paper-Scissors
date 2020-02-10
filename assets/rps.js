@@ -2,6 +2,7 @@ $(document).ready(function () {
     var pos;
 
     setTimeout(postwo, 1);
+    
    
 
 
@@ -43,11 +44,17 @@ $(document).ready(function () {
     setInMotion();
     
     function postwo(){
+        
+        // $("#imageToolOne").removeClass("hide");
+        // $("#imageToolTwo").removeClass("hide");
         pos=2;
 
     }
  
     function posfive () {
+        
+        // $("#imageToolOne").addClass("hide");
+        // $("#imageToolTwo").addClass("hide");
 
         pos=5;
     }
@@ -141,6 +148,8 @@ $(document).ready(function () {
     $("#register").on("click", function (event) {
         event.preventDefault();
 
+        posfive();
+
         if (($("#username").val().trim() !== "") && !(player1 && player2)) {
 
             if (player1 === null) {
@@ -219,6 +228,8 @@ $(document).ready(function () {
                
 
                 $("#isToolSelectedOne").html("Select Your Tool!");
+               
+
 
 
 
@@ -288,6 +299,9 @@ $(document).ready(function () {
             $("#round-outcome").html("");
             $("#isToolSelectedOne").html("Tool: Selected!");
 
+            setTimeout(posfive, 200);
+          
+
           
 
         }
@@ -298,20 +312,23 @@ $(document).ready(function () {
         event.preventDefault();
 
         if (player1 && player2 && (yourPlayerName === player2.name) && (turn === 2)) {
+
+            setTimeout(posfive,1);
+
             var choice = $(this).val().trim();
 
             player2.choice = choice;
             database.ref().child("/players/player2/choice").set(choice);
-            $("#isToolSelectedOne").html("Tool: Selected!");
+            $("#isToolSelectedTwo").html("Tool: Selected!");
 
-            setTimeout(posfive,200);
+           
             
             
             // setTimeout(postwo,4000);
 
 
 
-            setTimeout(rpsCompare,4000);
+            setTimeout(rpsCompare,6000);
             
 
             // rpsCompare();
@@ -325,11 +342,12 @@ $(document).ready(function () {
                 console.log("tie");
 
                 database.ref().child("/outcome/").set("Tie game!");
+                $("#winOrLoseOne").html("Tie Game!");
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
             
-                setTimeout(posfive, 200);
+              
                 $("#outcomeOne").attr("src", "./Rock.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
 
@@ -338,6 +356,7 @@ $(document).ready(function () {
                 console.log("paper wins");
 
                 database.ref().child("/outcome/").set(player2.name + " wins! <br> Paper beats Rock!");
+                $("#winOrLoseOne").html(player2.name + " wins!  Paper beats Rock!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
@@ -351,6 +370,7 @@ $(document).ready(function () {
                 console.log("rock wins");
 
                 database.ref().child("/outcome/").set(player1.name + " wins! <br> Rock beats Scissors!");
+                $("#winOrLoseOne").html(player1.name + " wins!  Rock beats Scissors!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
@@ -366,6 +386,7 @@ $(document).ready(function () {
                 console.log("paper wins");
 
                 database.ref().child("/outcome/").set(player1.name + " wins! <br> Paper beats Rock!");
+                $("#winOrLoseOne").html(player1.name + " wins! Paper beats Rock!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
@@ -379,6 +400,7 @@ $(document).ready(function () {
                 console.log("tie");
 
                 database.ref().child("/outcome/").set("Tie game!");
+                $("#winOrLoseOne").html("Tie Game!");
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
@@ -393,6 +415,7 @@ $(document).ready(function () {
                 console.log("scissors win");
 
                 database.ref().child("/outcome/").set(player2.name + " wins! <br> Scissors beats Paper!");
+                $("#winOrLoseOne").html(player2.name + " wins! Scissors beats Paper!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
@@ -409,6 +432,7 @@ $(document).ready(function () {
                 console.log("rock wins");
 
                 database.ref().child("/outcome/").set(player2.name + " wins! <br> Rock beats Scissors!");
+                $("#winOrLoseOne").html(player2.name + " wins! Rock beats Scissors!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
@@ -423,6 +447,8 @@ $(document).ready(function () {
                 console.log("scissors win");
 
                 database.ref().child("/outcome/").set(player1.name + " wins! <br> Scissors beats Paper!");
+                $("#winOrLoseOne").html(player1.name + " wins! Scissors beats Paper!");
+
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
              
@@ -435,6 +461,7 @@ $(document).ready(function () {
                 console.log("tie");
 
                 database.ref().child("/outcome/").set("Tie game!");
+                $("#winOrLoseOne").html("Tie Game!");
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
@@ -446,7 +473,7 @@ $(document).ready(function () {
             }
         }
 
-        turn = 1;
+        setTimeout(turn = 1,4000);
         database.ref().child("/turn").set(1);
         // database.ref("/outcome/").on("value", function(snapshot) {
         //     $("#round-outcome").html(snapshot.val());

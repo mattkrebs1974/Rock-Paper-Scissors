@@ -274,12 +274,14 @@ font-size-adjust: initial;
 line-height: 20vw;
 
 
+
 }
 
 
 #imageToolTwo
 {
 line-height:20vw;
+
 
 
 
@@ -590,4 +592,21 @@ text-align:center;
 margin-top:-4%;
 margin-bottom:5%;
 
+}
+
+.hide {
+
+visibility: hidden;
+
+}
+
+
+#winOrLoseOne {
+padding-bottom:0px;
+
+margin-bottom: 0;
+text-align: center;
+font-size: 35%;
+font-size-adjust: initial;
+  width:98%;
 }
