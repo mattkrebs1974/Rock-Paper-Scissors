@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    var pos = 2;
+    var pos;
+
+    setTimeout(postwo, 1);
    
 
 
@@ -39,7 +41,16 @@ $(document).ready(function () {
     }
 
     setInMotion();
+    
+    function postwo(){
+        pos=2;
 
+    }
+ 
+    function posfive () {
+
+        pos=5;
+    }
 
 
 
@@ -143,7 +154,7 @@ $(document).ready(function () {
                     choice: ""
                 };
                 $("#nameone").text(player1.name);
-                pos = 2;
+             
               
 
                 // $("#player-1-greeting").css("display", "block");
@@ -169,7 +180,7 @@ $(document).ready(function () {
                     choice: ""
                 };
                 $("#nametwo").text(player2.name);
-                pos = 2;
+               
             
               
 
@@ -205,7 +216,7 @@ $(document).ready(function () {
 
                 // $("#player-2-div").css("border-color", "black");
                 // $("#player-1-div").css("border-color", "red");
-                pos = 2;
+               
 
                 $("#isToolSelectedOne").html("Select Your Tool!");
 
@@ -293,7 +304,17 @@ $(document).ready(function () {
             database.ref().child("/players/player2/choice").set(choice);
             $("#isToolSelectedOne").html("Tool: Selected!");
 
-            rpsCompare();
+            setTimeout(posfive,200);
+            
+            
+            // setTimeout(postwo,4000);
+
+
+
+            setTimeout(rpsCompare,4000);
+            
+
+            // rpsCompare();
 
         }
     });
@@ -307,8 +328,8 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
-                pos = 5;
-               
+            
+                setTimeout(posfive, 200);
                 $("#outcomeOne").attr("src", "./Rock.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
 
@@ -320,7 +341,7 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
-                pos = 5;
+               
             
                 $("#outcomeOne").attr("src", "./Rock.png");
                 $("#outcomeTwo").attr("src", "./Paper.png");
@@ -333,7 +354,7 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
-                pos = 5;
+            
                
                 $("#outcomeOne").attr("src", "./Rock.png");
                 $("#outcomeTwo").attr("src", "./Scissors.png");
@@ -348,7 +369,7 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
-                pos = 5;
+               
               
                 $("#outcomeOne").attr("src", "./Paper.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
@@ -361,7 +382,7 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
-                pos = 5;
+                
              
                 $("#outcomeOne").attr("src", "./Paper.png");
                 $("#outcomeTwo").attr("src", "./Paper.png");
@@ -375,7 +396,7 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
-                pos = 5;
+               
               
                 $("#outcomeOne").attr("src", "./Paper.png");
                 $("#outcomeTwo").attr("src", "./Scissors.png");
@@ -391,7 +412,7 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
-                pos = 5;
+             
               
                 $("#outcomeOne").attr("src", "./Scissors.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
@@ -404,7 +425,7 @@ $(document).ready(function () {
                 database.ref().child("/outcome/").set(player1.name + " wins! <br> Scissors beats Paper!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
-                pos = 5;
+             
                
                 $("#outcomeOne").attr("src", "./Scissors.png");
                 $("#outcomeTwo").attr("src", "./Paper.png");
@@ -418,7 +439,7 @@ $(document).ready(function () {
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
 
-                pos = 5;
+           
               
                 $("#outcomeOne").attr("src", "./Scissors.png");
                 $("#outcomeTwo").attr("src", "./Scissors.png");
