@@ -160,7 +160,8 @@ $(document).ready(function () {
                     win: 0,
                     loss: 0,
                     tie: 0,
-                    choice: ""
+                    choice: "",
+                    response: ""
                 };
                 $("#nameone").text(player1.name);
 
@@ -186,7 +187,8 @@ $(document).ready(function () {
                     win: 0,
                     loss: 0,
                     tie: 0,
-                    choice: ""
+                    choice: "",
+                    response: ""
                 };
                 $("#nametwo").text(player2.name);
 
@@ -303,7 +305,7 @@ $(document).ready(function () {
             $("#isToolSelectedTwo").html("Select Your Tool!");
 
 
-            setTimeout(posfive, 200);
+            posfive();
 
 
 
@@ -332,7 +334,7 @@ $(document).ready(function () {
 
 
 
-            setTimeout(rpsCompare, 6000);
+            rpsCompare();
 
 
             // rpsCompare();
@@ -349,6 +351,11 @@ $(document).ready(function () {
                 $("#winOrLoseOne").html("Tie Game!");
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
+                database.ref().child("/players/player1/response").set(player1.name +", You earned a 'Tie'");
+                database.ref().child("/players/player2/response").set(player2.name +", You earned a 'Tie'");
+
+          
+
 
 
 
@@ -364,6 +371,9 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
 
+                database.ref().child("/players/player1/response").set(player1.name + ", You lost!");
+                database.ref().child("/players/player2/response").set(player2.name + ", You won!");
+
 
 
                 $("#outcomeOne").attr("src", "./Rock.png");
@@ -377,6 +387,10 @@ $(document).ready(function () {
                 $("#winOrLoseOne").html(player1.name + " wins!  Rock beats Scissors!");
                 database.ref().child("/players/player1/win").set(player1.win + 1);
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
+
+                database.ref().child("/players/player1/response").set(player1.name + ", You win!");
+                database.ref().child("/players/player2/response").set(player2.name + ", You lost!");
+
 
 
 
@@ -395,6 +409,10 @@ $(document).ready(function () {
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
 
+                database.ref().child("/players/player1/response").set(player1.name + ", You win!");
+                database.ref().child("/players/player2/response").set(player2.name + ", You lost!");
+
+
 
                 $("#outcomeOne").attr("src", "./Paper.png");
                 $("#outcomeTwo").attr("src", "./Rock.png");
@@ -407,6 +425,9 @@ $(document).ready(function () {
                 $("#winOrLoseOne").html("Tie Game!");
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
+
+                database.ref().child("/players/player1/response").set(player1.name + ", You earned a 'Tie'");
+                database.ref().child("/players/player2/response").set(player2.name + ", You earned a 'Tie'");
 
 
 
@@ -422,6 +443,8 @@ $(document).ready(function () {
                 $("#winOrLoseOne").html(player2.name + " wins! Scissors beats Paper!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
+                database.ref().child("/players/player1/response").set(player1.name + ", You lost!");
+                database.ref().child("/players/player2/response").set(player2.name + ", You won!");
 
 
 
@@ -439,6 +462,8 @@ $(document).ready(function () {
                 $("#winOrLoseOne").html(player2.name + " wins! Rock beats Scissors!");
                 database.ref().child("/players/player1/loss").set(player1.loss + 1);
                 database.ref().child("/players/player2/win").set(player2.win + 1);
+                database.ref().child("/players/player1/response").set(player1.name + ", You lost!");
+                database.ref().child("/players/player2/response").set(player2.name + ", You won!");
 
 
 
@@ -457,6 +482,10 @@ $(document).ready(function () {
                 database.ref().child("/players/player2/loss").set(player2.loss + 1);
 
 
+                database.ref().child("/players/player1/response").set(player1.name + ", You win!");
+                database.ref().child("/players/player2/response").set(player2.name + ", You lost!");
+
+
                 $("#outcomeOne").attr("src", "./Scissors.png");
                 $("#outcomeTwo").attr("src", "./Paper.png");
 
@@ -469,6 +498,8 @@ $(document).ready(function () {
                 database.ref().child("/players/player1/tie").set(player1.tie + 1);
                 database.ref().child("/players/player2/tie").set(player2.tie + 1);
 
+                database.ref().child("/players/player1/response").set(player1.name + ", You earned a 'Tie'");
+                database.ref().child("/players/player2/response").set(player2.name + ", You earned a 'Tie'");
 
 
 
@@ -477,12 +508,34 @@ $(document).ready(function () {
             }
         }
 
-        setTimeout(turn = 1, 4000);
+       
+
+        turn = 1;
         database.ref().child("/turn").set(1);
 
         database.ref("/outcome/").on("value", function (snapshot) {
             $("#winOrLoseOne").html(snapshot.val());
         });
+
+   
+
+        database.ref("/players/player1/response").on("value", function (snapshot) {
+
+            $("#winOrLoseOne").html(snapshot.val());
+
+        });
+
+
+        database.ref("/players/player2/response").on("value", function (snapshot) {
+
+            $("#winOrLoseOne").html(snapshot.val());
+
+        });
+
+
+
+
+
     }
 
 
