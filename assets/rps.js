@@ -282,30 +282,76 @@ $(document).ready(function () {
 
         console.log("outcome has changed");
 
-        $("#round-outcome").html(snapshot.val());
+        $("#winOrLoseOne").html(snapshot.val());
 
     });
+
+/// this works for getting player 1 the same as player 2
+
+    database.ref("/players/player1/choice").on("value", function (snapshot) {
+
+    
+
+        if (player1 && player2)  {
+
+        console.log("eat some more food!")
+      
+        $("#isToolSelectedOne").html("Tool: Selected!");
+        $("#isToolSelectedTwo").html("Select Your Tool!");
+            }
+
+
+    });
+
+
+    database.ref("/players/player2/choice").on("value", function (snapshot) {
+
+
+
+        if (player1 && player2) {
+
+            console.log("eat some more food!")
+
+            // $("#isToolSelectedOne").html("Tool: Selected!");
+            // $("#isToolSelectedTwo").html("Select Your Tool!");
+
+        }
+
+
+    });
+
+
+
 
 
     $("#tools").on("click", ".btnOne", function (event) {
         event.preventDefault();
 
-
-
-        if (player1 && player2 && (yourPlayerName === player1.name) && (turn === 1)) {
+        if (player1 && player2 && (yourPlayerName === player1.name) && (turn === 1))   {
+           
+           
+           
+           
             var choice = $(this).val().trim();
+
+            player1Choice = player1.choice;
 
             player1.choice = choice;
             database.ref().child("/players/player1/choice").set(choice);
 
+            console.log("eat Your Food");
+
             turn = 2;
             database.ref().child("/turn").set(2);
-            $("#round-outcome").html("");
+       
             $("#isToolSelectedOne").html("Tool: Selected!");
             $("#isToolSelectedTwo").html("Select Your Tool!");
 
+            console.log("drink your drink");
 
-            posfive();
+
+
+            
 
 
 
@@ -319,7 +365,7 @@ $(document).ready(function () {
 
         if (player1 && player2 && (yourPlayerName === player2.name) && (turn === 2)) {
 
-            setTimeout(posfive, 1);
+           
 
             var choice = $(this).val().trim();
 
@@ -332,12 +378,10 @@ $(document).ready(function () {
 
             // setTimeout(postwo,4000);
 
-
-
             rpsCompare();
 
 
-            // rpsCompare();
+           
 
         }
     });
@@ -508,9 +552,9 @@ $(document).ready(function () {
             }
         }
 
-       
+      
 
-        turn = 1;
+        setTimeout(function(){turn = 1},3000);
         database.ref().child("/turn").set(1);
 
         database.ref("/outcome/").on("value", function (snapshot) {
@@ -521,12 +565,26 @@ $(document).ready(function () {
 
         database.ref("/players/player1/response").on("value", function (snapshot) {
 
+
+
             $("#winOrLoseOne").html(snapshot.val());
 
         });
 
 
-        database.ref("/players/player2/response").on("value", function (snapshot) {
+        // database.ref("/players/player2/response").on("value", function (snapshot) {
+
+        //     console.log("player1-firebasedata" + snapshot.val());
+
+
+        //     $("#winOrLoseOne").html(snapshot.val());
+
+        // });
+
+        database.ref("/outcome/").on("value", function (snapshot) {
+
+            console.log("player1-firebasedata" + snapshot.val());
+
 
             $("#winOrLoseOne").html(snapshot.val());
 
@@ -536,11 +594,27 @@ $(document).ready(function () {
 
 
 
+
+        switching();
     }
 
 
 
+function switching() {
+turn=1
 
+
+    database.ref("/outcome/").on("value", function (snapshot) {
+
+        console.log("player1-fire-base-data" + snapshot.val());
+
+
+        $("#winOrLoseOne").html(snapshot.val());
+
+    });
+
+
+}
 
 
 
