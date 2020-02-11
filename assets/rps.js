@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var pos;
 
-    setTimeout(postwo, 1);
+    setTimeout(postwo, 0);
 
 
 
@@ -594,14 +594,14 @@ $(document).ready(function () {
 
         // });
 
-        database.ref("/outcome/").on("value", function (snapshot) {
+        // database.ref("/outcome/").on("value", function (snapshot) {
 
-            console.log("player1-firebasedata" + snapshot.val());
+        //     console.log("player1-firebasedata" + snapshot.val());
 
 
-            $("#winOrLoseOne").html(snapshot.val());
+        //     $("#winOrLoseOne").html(snapshot.val());
 
-        });
+        // });
 
 
 
