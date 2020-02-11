@@ -148,7 +148,7 @@ $(document).ready(function () {
     $("#register").on("click", function (event) {
         event.preventDefault();
 
-        posfive();
+    
 
         if (($("#username").val().trim() !== "") && !(player1 && player2)) {
 
@@ -280,9 +280,18 @@ $(document).ready(function () {
     database.ref("/outcome/").on("value", function (snapshot) {
         var outcome = snapshot.val();
 
+        posfive();
         console.log("outcome has changed");
 
         $("#winOrLoseOne").html(snapshot.val());
+
+
+        $("#outcomeOne").attr("src", "./Paper.png");
+        $("#outcomeTwo").attr("src", "./Paper.png");
+
+        setTimeout(postwo,3000);
+
+        
 
     });
 
@@ -363,6 +372,8 @@ $(document).ready(function () {
     $("#tools").on("click", ".btnOne", function (event) {
         event.preventDefault();
 
+        
+
         if (player1 && player2 && (yourPlayerName === player2.name) && (turn === 2)) {
 
            
@@ -403,8 +414,7 @@ $(document).ready(function () {
 
 
 
-                $("#outcomeOne").attr("src", "./Rock.png");
-                $("#outcomeTwo").attr("src", "./Rock.png");
+              
 
 
             } else if (player2.choice === "paper") {
@@ -420,8 +430,6 @@ $(document).ready(function () {
 
 
 
-                $("#outcomeOne").attr("src", "./Rock.png");
-                $("#outcomeTwo").attr("src", "./Paper.png");
 
 
             } else {
@@ -438,8 +446,7 @@ $(document).ready(function () {
 
 
 
-                $("#outcomeOne").attr("src", "./Rock.png");
-                $("#outcomeTwo").attr("src", "./Scissors.png");
+               
 
             }
 
@@ -458,8 +465,7 @@ $(document).ready(function () {
 
 
 
-                $("#outcomeOne").attr("src", "./Paper.png");
-                $("#outcomeTwo").attr("src", "./Rock.png");
+           
 
 
             } else if (player2.choice === "paper") {
@@ -475,9 +481,7 @@ $(document).ready(function () {
 
 
 
-                $("#outcomeOne").attr("src", "./Paper.png");
-                $("#outcomeTwo").attr("src", "./Paper.png");
-
+              
 
 
             } else {
@@ -492,8 +496,7 @@ $(document).ready(function () {
 
 
 
-                $("#outcomeOne").attr("src", "./Paper.png");
-                $("#outcomeTwo").attr("src", "./Scissors.png");
+             
 
 
             }
@@ -511,8 +514,6 @@ $(document).ready(function () {
 
 
 
-                $("#outcomeOne").attr("src", "./Scissors.png");
-                $("#outcomeTwo").attr("src", "./Rock.png");
 
 
 
@@ -530,8 +531,7 @@ $(document).ready(function () {
                 database.ref().child("/players/player2/response").set(player2.name + ", You lost!");
 
 
-                $("#outcomeOne").attr("src", "./Scissors.png");
-                $("#outcomeTwo").attr("src", "./Paper.png");
+             
 
 
             } else {
@@ -547,8 +547,7 @@ $(document).ready(function () {
 
 
 
-                $("#outcomeOne").attr("src", "./Scissors.png");
-                $("#outcomeTwo").attr("src", "./Scissors.png");
+              
             }
         }
 
