@@ -42,12 +42,12 @@ color:#800000;
 font-size: 7vw;
 text-align: center;
 background-color: white;
-
+font-variant: small-caps;
 padding:20px;
 padding-bottom: 0px;
 
 opacity:.8;
-font-variant: small-caps;
+
 border-radius: 10px;
 
 
@@ -574,17 +574,22 @@ color: white;
 height: 40px;
 line-height: 10px;
 font-size: 20px;
+width:68vw;
+max-width: 200px;
 
 
 }
 
 #chat-box {
 background-color: white;
-color: black;
+
 height: 100px;
 line-height: 10px;
 font-size: 20px;
 text-align:center;
+color:#800000;
+font-variant: small-caps;
+
 }
 
 #chatButton {

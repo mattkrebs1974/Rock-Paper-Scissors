@@ -229,9 +229,16 @@ $(document).ready(function () {
                 // $("#player-1-div").css("border-color", "red");
 
 
-                $("#isToolSelectedOne").html("Select Your Tool!");
-                $("#isToolSelectedTwo").html("Player 1's Turn.");
+                
 
+                function waitOnInstructions() {
+
+                    $("#isToolSelectedOne").html("Select Your Tool!");
+
+                    $("#isToolSelectedTwo").html("Player 1's Turn.");
+
+                }
+                setTimeout(waitOnInstructions,0);
 
 
 
@@ -291,11 +298,10 @@ $(document).ready(function () {
         $("#outcomeOne").attr("src", "./"+ inputPlayer1Choice + ".png");
         $("#outcomeTwo").attr("src", "./"+ inputPlayer2Choice + ".png");
 
-// console.log("EATING"+ player1.choice);
-// console.log(player2.choice);
 
 
-        setTimeout(postwo,3000);
+
+        setTimeout(postwo,5000);
 
         
 
@@ -564,6 +570,8 @@ $(document).ready(function () {
 
         database.ref("/outcome/").on("value", function (snapshot) {
             $("#winOrLoseOne").html(snapshot.val());
+
+            
         });
 
    
