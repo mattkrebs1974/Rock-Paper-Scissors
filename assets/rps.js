@@ -279,6 +279,8 @@ $(document).ready(function () {
 
     database.ref("/outcome/").on("value", function (snapshot) {
         var outcome = snapshot.val();
+        var inputPlayer1Choice=player1.choice;
+        var inputPlayer2Choice=player2.choice;
 
         posfive();
         console.log("outcome has changed");
@@ -286,8 +288,12 @@ $(document).ready(function () {
         $("#winOrLoseOne").html(snapshot.val());
 
 
-        $("#outcomeOne").attr("src", "./Paper.png");
-        $("#outcomeTwo").attr("src", "./Paper.png");
+        $("#outcomeOne").attr("src", "./"+ inputPlayer1Choice + ".png");
+        $("#outcomeTwo").attr("src", "./"+ inputPlayer2Choice + ".png");
+
+// console.log("EATING"+ player1.choice);
+// console.log(player2.choice);
+
 
         setTimeout(postwo,3000);
 
