@@ -296,10 +296,10 @@ $(document).ready(function () {
         $("#winOrLoseOne").html(snapshot.val());
         
 
-        $("#outcomeOne").attr("src", "../" +  inputPlayer1Choice + ".png");
+        setTimeout($("#outcomeOne").attr("src", "../" +  inputPlayer1Choice + ".png"), 1000);
        
          
-        $("#outcomeTwo").attr("src", "../" + inputPlayer2Choice + ".png");
+        setTimeout($("#outcomeTwo").attr("src", "../" + inputPlayer2Choice + ".png"), 1000);
 
 
 
