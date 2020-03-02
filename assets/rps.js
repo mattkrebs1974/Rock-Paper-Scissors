@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var pos;
+    var choice=null;
 
     setTimeout(postwo, 0);
 
@@ -79,8 +80,8 @@ $(document).ready(function () {
     var player1 = null;
     var player2 = null;
     var yourPlayerName = "";
-    var player1Choice = "";
-    var player2Choice = "";
+    var player1Choice = null;
+    var player2Choice = null;
     var turn = 1;
 
     database.ref("/players/").on("value", function (snapshot) {
@@ -293,11 +294,11 @@ $(document).ready(function () {
         console.log("outcome has changed");
 
         $("#winOrLoseOne").html(snapshot.val());
-
+        
 
         $("#outcomeOne").attr("src", "./" +  inputPlayer1Choice + ".png");
        
-
+        
         $("#outcomeTwo").attr("src", "./" + inputPlayer2Choice + ".png");
 
 
