@@ -307,7 +307,7 @@ $(document).ready(function () {
         
         $("#outcomeTwo").attr("src", "./" + inputPlayer2Choice + ".png");
 
-         $("#outcomeTwo").attr("alt", inputPlayer1Choice);
+         $("#outcomeTwo").attr("alt", inputPlayer2Choice);
 }
 setTimeout(posfive,990);
 setTimeout(showAnswer,1000);
