@@ -311,6 +311,8 @@ $(document).ready(function () {
 }
 setTimeout(posfive,990);
 setTimeout(showAnswer,1000);
+setTimeout(showAnswer,1500);
+setTimeout(showAnswer,2000);
 
 
 
