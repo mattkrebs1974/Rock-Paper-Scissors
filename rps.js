@@ -300,10 +300,16 @@ $(document).ready(function () {
         function showAnswer()
 {
         $("#outcomeOne").attr("src", "./" +  inputPlayer1Choice + ".png");
+
+        $("#outcomeOne").attr("alt", inputPlayer1Choice);
+
+
         
         $("#outcomeTwo").attr("src", "./" + inputPlayer2Choice + ".png");
+
+         $("#outcomeTwo").attr("alt", inputPlayer1Choice);
 }
-setTimeout(posfive,1000);
+setTimeout(posfive,990);
 setTimeout(showAnswer,1000);
 
 
