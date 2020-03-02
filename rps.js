@@ -290,16 +290,21 @@ $(document).ready(function () {
         var inputPlayer1Choice=player1.choice;
         var inputPlayer2Choice=player2.choice;
 
-        posfive();
+       
         console.log("outcome has changed");
 
         $("#winOrLoseOne").html(snapshot.val());
         
 
-        setTimeout($("#outcomeOne").attr("src", "../" +  inputPlayer1Choice + ".png"), 1000);
-       
-         
-        setTimeout($("#outcomeTwo").attr("src", "../" + inputPlayer2Choice + ".png"), 1000);
+
+        function showAnswer()
+{
+        $("#outcomeOne").attr("src", "./" +  inputPlayer1Choice + ".png");
+        
+        $("#outcomeTwo").attr("src", "./" + inputPlayer2Choice + ".png");
+}
+setTimeout(posfive,1000);
+setTimeout(showAnswer,1000);
 
 
 
