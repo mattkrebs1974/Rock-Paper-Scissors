@@ -299,22 +299,24 @@ $(document).ready(function () {
 
         function showAnswer()
 {
-        $("#outcomeOne").attr("src", "./" +  inputPlayer1Choice + ".png");
+        $("#outcomeOne").attr("src", inputPlayer1Choice + ".png");
 
         $("#outcomeOne").attr("alt", inputPlayer1Choice);
 
+            console.log("1" + inputPlayer1Choice)
+            console.log("2" +inputPlayer2Choice)
+
 
         
-        $("#outcomeTwo").attr("src", "./" + inputPlayer2Choice + ".png");
+        $("#outcomeTwo").attr("src", inputPlayer2Choice + ".png");
 
          $("#outcomeTwo").attr("alt", inputPlayer2Choice);
 }
 setTimeout(posfive,990);
 setTimeout(showAnswer,1000);
-setTimeout(showAnswer,1500);
-setTimeout(showAnswer,2000);
 
 
+       
 
 
         setTimeout(postwo,5000);
