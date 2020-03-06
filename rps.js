@@ -311,7 +311,7 @@ $(document).ready(function () {
 
 
 
-        var inputPlayer2Choice=player2.choice;
+   
 
        
         console.log("outcome has changed");
@@ -321,8 +321,7 @@ $(document).ready(function () {
         var showAnswerOne = "./" + inputPlayer1Choice + ".png";
         var showAnswerTwo = "./" + inputPlayer2Choice + ".png";
 
-        console.log("showAnswerOne" + showAnswerOne.toUpperCase);
-        console.log("showAnswerTwo" + showAnswerTwo.toUpperCase);
+     
 
         function showAnswer()
 {
