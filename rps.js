@@ -290,43 +290,30 @@ $(document).ready(function () {
         var inputPlayer1Choice = "";
         var inputPlayer2Choice = "";
 
-        var cOne=player1.choice;
-        var cTwo=player2.choice;
+        var firstLetter=(player1.choice).slice(0,1);
+        var capitalize=firstLetter.toUpperCase();
+        var rest = (player1.choice).substring(1, (player1.choice).length);
 
-        var cONEE = cOne.toUpperCase();
-        var cTWOO = cTwo.toUpperCase();
+        var firstLetterTwo = (player2.choice).slice(0, 1);
+        var capitalizeTwo = firstLetterTwo.toUpperCase();
+        var restTwo = (player2.choice).substring(1, (player2.choice).length);
 
-        console.log("1 " + cONEE);
-        console.log("2 " + cTWOO);
+    
+      
+
+
+
+
+        //cut off the first letter capitalize then change to Upper Case then concatinate. . . can keep as two separate strings. 
+
 
        
 
 
-        console.log("firebase1" + cOne);
-        console.log("firebase2" + cTwo);
-
-        if (cOne = "rock") {
-             inputPlayer1Choice = "Rock"
-        }if (cOne = "scissors") {
-             inputPlayer1Choice = "Scissors"
-        }if (cOne = "paper") {
-             inputPlayer1Choice = "Paper"
-        }
   
    
 
 
-
-
-
-
-        if (cTwo = "rock") {
-            inputPlayer2Choice = "Rock"
-        } if (cTwo = "scissors") {
-            inputPlayer2Choice = "Scissors"
-        } if (cTwo = "paper") {
-            inputPlayer2Choice = "Paper"
-        }
 
         console.log("choice: " + inputPlayer1Choice);
         console.log("choice2: " + inputPlayer2Choice);
@@ -343,8 +330,8 @@ $(document).ready(function () {
         // var showAnswerOne = "./" + inputPlayer1Choice + ".png";
         // var showAnswerTwo = "./" + inputPlayer2Choice + ".png";
 
-        var showAnswerOne = "./" + cONEE + ".png";
-        var showAnswerTwo = "./" + cTWOO + ".png";
+        var showAnswerOne = "./" + capitalize + rest + ".png";
+        var showAnswerTwo = "./" + capitalizeTwo + restTwo + ".png";
 
      
 
