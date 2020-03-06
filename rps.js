@@ -290,23 +290,42 @@ $(document).ready(function () {
         var inputPlayer1Choice = "";
         var inputPlayer2Choice = "";
 
-        console.log("firebase1" + player1.choice);
-        console.log("firebase2" + player2.choice);
+        var cOne=player1.choice;
+        var cTwo=player2.choice;
 
-        if (player1.choice === "rock") {
-             inputPlayer1Choice === "Rock"
-        } else if (player1.choice ==="scissors") {
-             inputPlayer1Choice === "Scissors"
-        } else {
-             inputPlayer1Choice === "Paper"
+        var cONEE = cOne.toUpperCase();
+        var cTWOO = cTwo.toUpperCase();
+
+        console.log("1 " + cONEE);
+        console.log("2 " + cTWOO);
+
+       
+
+
+        console.log("firebase1" + cOne);
+        console.log("firebase2" + cTwo);
+
+        if (cOne = "rock") {
+             inputPlayer1Choice = "Rock"
+        }if (cOne = "scissors") {
+             inputPlayer1Choice = "Scissors"
+        }if (cOne = "paper") {
+             inputPlayer1Choice = "Paper"
         }
+  
+   
 
-        if (player2.choice === "rock") {
-            inputPlayer2Choice === "Rock"
-        } else if (player2.choice === "scissors") {
-            inputPlayer2Choice === "Scissors"
-        } else {
-            inputPlayer2Choice === "Paper"
+
+
+
+
+
+        if (cTwo = "rock") {
+            inputPlayer2Choice = "Rock"
+        } if (cTwo = "scissors") {
+            inputPlayer2Choice = "Scissors"
+        } if (cTwo = "paper") {
+            inputPlayer2Choice = "Paper"
         }
 
         console.log("choice: " + inputPlayer1Choice);
@@ -321,8 +340,11 @@ $(document).ready(function () {
 
         $("#winOrLoseOne").html(snapshot.val());
         
-        var showAnswerOne = "./" + inputPlayer1Choice + ".png";
-        var showAnswerTwo = "./" + inputPlayer2Choice + ".png";
+        // var showAnswerOne = "./" + inputPlayer1Choice + ".png";
+        // var showAnswerTwo = "./" + inputPlayer2Choice + ".png";
+
+        var showAnswerOne = "./" + cONEE + ".png";
+        var showAnswerTwo = "./" + cTWOO + ".png";
 
      
 
@@ -352,7 +374,7 @@ setTimeout(showAnswer,1000);
        
 
 
-        setTimeout(postwo,35000);
+        setTimeout(postwo,5000);
 
         
 
