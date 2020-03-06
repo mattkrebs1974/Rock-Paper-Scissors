@@ -293,20 +293,20 @@ $(document).ready(function () {
         console.log("firebase1" + player1.choice);
         console.log("firebase2" + player2.choice);
 
-        if (player1.choice = "rock") {
-             inputPlayer1Choice = "Rock"
-        } else if (player1.choice ="scissors") {
-             inputPlayer1Choice = "Scissors"
+        if (player1.choice === "rock") {
+             inputPlayer1Choice === "Rock"
+        } else if (player1.choice ==="scissors") {
+             inputPlayer1Choice === "Scissors"
         } else {
-             inputPlayer1Choice = "Paper"
+             inputPlayer1Choice === "Paper"
         }
 
-        if (player2.choice = "rock") {
-            inputPlayer2Choice = "Rock"
-        } else if (player2.choice = "scissors") {
-            inputPlayer2Choice = "Scissors"
+        if (player2.choice === "rock") {
+            inputPlayer2Choice === "Rock"
+        } else if (player2.choice === "scissors") {
+            inputPlayer2Choice === "Scissors"
         } else {
-            inputPlayer2Choice = "Paper"
+            inputPlayer2Choice === "Paper"
         }
 
         console.log("choice: " + inputPlayer1Choice);
