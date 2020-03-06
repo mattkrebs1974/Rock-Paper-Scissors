@@ -287,7 +287,30 @@ $(document).ready(function () {
 
     database.ref("/outcome/").on("value", function (snapshot) {
         var outcome = snapshot.val();
-        var inputPlayer1Choice=player1.choice;
+        var inputPlayer1Choice = "";
+        var inputPlayer2Choice = "";
+
+        if (player1.choice = "rock") {
+             inputPlayer1Choice = "Rock"
+        } else if (player1.choice ="scissors") {
+             inputPlayer1Choice = "Scissors"
+        } else {
+             inputPlayer1Choice = "Paper"
+        }
+
+        if (player2.choice = "rock") {
+            inputPlayer2Choice = "Rock"
+        } else if (player2.choice = "scissors") {
+            inputPlayer2Choice = "Scissors"
+        } else {
+            inputPlayer2Choice = "Paper"
+        }
+
+        console.log("choice: " + inputPlayer1Choice);
+        console.log("choice2: " + inputPlayer2Choice);
+
+
+
         var inputPlayer2Choice=player2.choice;
 
        
@@ -295,11 +318,11 @@ $(document).ready(function () {
 
         $("#winOrLoseOne").html(snapshot.val());
         
-        var showAnswerOne = "./" + player1.choice + ".png";
-        var showAnswerTwo = "./" + player2.choice + ".png";
+        var showAnswerOne = "./" + inputPlayer1Choice + ".png";
+        var showAnswerTwo = "./" + inputPlayer2Choice + ".png";
 
-        console.log("showAnswerOne" + showAnswerOne);
-        console.log("showAnswerTwo" + showAnswerTwo);
+        console.log("showAnswerOne" + showAnswerOne.toUpperCase);
+        console.log("showAnswerTwo" + showAnswerTwo.toUpperCase);
 
         function showAnswer()
 {
@@ -327,7 +350,7 @@ setTimeout(showAnswer,1000);
        
 
 
-        setTimeout(postwo,25000);
+        setTimeout(postwo,5000);
 
         
 
