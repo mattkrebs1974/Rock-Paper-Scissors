@@ -327,7 +327,7 @@ setTimeout(showAnswer,1000);
        
 
 
-        setTimeout(postwo,5000);
+        setTimeout(postwo,25000);
 
         
 
