@@ -295,20 +295,28 @@ $(document).ready(function () {
 
         $("#winOrLoseOne").html(snapshot.val());
         
+        var showAnswerOne = "./" + inputPlayer1Choice + ".png";
+        var showAnswerTwo = "./" + inputPlayer2Choice + ".png";
 
+        console.log("showAnswerOne" + showAnswerOne);
+        console.log("showAnswerTwo" + showAnswerTwo);
 
         function showAnswer()
 {
-        $("#outcomeOne").attr("src", inputPlayer1Choice + ".png");
+
+
+
+
+        $("#outcomeOne").attr("src", showAnswerOne);
 
         $("#outcomeOne").attr("alt", inputPlayer1Choice);
 
-            console.log("1" + inputPlayer1Choice)
-            console.log("2" +inputPlayer2Choice)
+            console.log(typeof inputPlayer1Choice)
+            console.log($("#outcomeOne").html())
 
 
         
-        $("#outcomeTwo").attr("src", inputPlayer2Choice + ".png");
+        $("#outcomeTwo").attr("src", showAnswerTwo);
 
          $("#outcomeTwo").attr("alt", inputPlayer2Choice);
 }
