@@ -295,8 +295,8 @@ $(document).ready(function () {
 
         $("#winOrLoseOne").html(snapshot.val());
         
-        var showAnswerOne = "./" + inputPlayer1Choice + ".png";
-        var showAnswerTwo = "./" + inputPlayer2Choice + ".png";
+        var showAnswerOne = "./" + player1.choice + ".png";
+        var showAnswerTwo = "./" + player2.choice + ".png";
 
         console.log("showAnswerOne" + showAnswerOne);
         console.log("showAnswerTwo" + showAnswerTwo);
