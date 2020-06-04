@@ -8,14 +8,9 @@ This game uses Firebase to allow for two players to play this game from differen
 
 ## Deployment 
 
-This application can be found [here.]()
+This application can be found [here.](https://mattkrebs1974.github.io/Rock-Paper-Scissors/)
 
 ## User Experience
 
-After the page loads a you will be able to either create a user (if it is your first time visiting) or login. 
-Once you have registered and logged in you will take a survey answering 4 questions meant to gauge your "Mood" "Sleep" "Exercise" and "Hunger". 
-
-After taking the survey you will play the Game which tests your reaction time. 
-
-After playing the game you will be able to see how your Reaction Time as compared with any of your survey answers compare to past results for those survey questions. 
+As each user logs in they will be designated as either "User 1" or "User 2." Once both have logged in the "User 1" will be prompted to select his/her tool. Then "User 2" will be prompted to choose his/her tool. After this happens the result of the game will be shown and the wins/losses recorded.  
 
