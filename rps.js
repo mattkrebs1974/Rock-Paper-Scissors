@@ -1,23 +1,35 @@
 $(document).ready(function () {
   var pos;
 
-  const setInMotion = () => {
-    if (pos == 0) {
-      $("#outcomeOne").attr("src", "./Rock.png");
-      $("#outcomeTwo").attr("src", "./Paper.png");
-      pos = 3;
-      pos--;
-    } else if (pos == 1) {
-      $("#outcomeOne").attr("src", "./Paper.png");
-      $("#outcomeTwo").attr("src", "./Scissors.png");
-      pos--;
-    } else if (pos == 2) {
-      $("#outcomeOne").attr("src", "./Scissors.png");
-      $("#outcomeTwo").attr("src", "./Rock.png");
-      pos--;
-    } else {
-    }
-  };
+
+   const setInMotion = () =>  {
+        var startedMotion = setInterval(frame, 100);
+         function frame() {
+             if (pos == 0) {
+                 $("#outcomeOne").attr("src", "./Rock.png");
+                 $("#outcomeTwo").attr("src", "./Paper.png");
+                 pos = 3;
+                 pos--;
+
+             }
+             else if (pos == 1) {
+
+                 $("#outcomeOne").attr("src", "./Paper.png");
+                 $("#outcomeTwo").attr("src", "./Scissors.png");
+                 pos--;
+             }
+
+             else if (pos == 2) {
+
+                 $("#outcomeOne").attr("src", "./Scissors.png");
+                 $("#outcomeTwo").attr("src", "./Rock.png");
+                 pos--;
+
+             } else { };
+         }
+         frame();
+     }
+     setInMotion();
 
   const postwo = () => {
     pos = 2;
@@ -272,14 +284,14 @@ $(document).ready(function () {
     switching();
   };
 
-  const switching = () =>  {
+  const switching = () => {
     turn = 1;
     database.ref("/outcome/").on("value", function (snapshot) {
       console.log("player1-fire-base-data" + snapshot.val());
 
       $("#winOrLoseOne").html(snapshot.val());
     });
-  }
+  };
 
   setTimeout(postwo, 0);
   setInMotion();
@@ -447,14 +459,14 @@ $(document).ready(function () {
     var showAnswerOne = "./" + capitalize + rest + ".png";
     var showAnswerTwo = "./" + capitalizeTwo + restTwo + ".png";
 
-    const showAnswer= () =>  {
+    const showAnswer = () => {
       $("#outcomeOne").attr("src", showAnswerOne);
       $("#outcomeOne").attr("alt", inputPlayer1Choice);
       console.log(typeof inputPlayer1Choice);
       console.log($("#outcomeOne").html());
       $("#outcomeTwo").attr("src", showAnswerTwo);
       $("#outcomeTwo").attr("alt", inputPlayer2Choice);
-    }
+    };
     setTimeout(posfive, 990);
     setTimeout(showAnswer, 1000);
     setTimeout(postwo, 5000);
